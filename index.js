@@ -15,3 +15,15 @@ function mask(card) {
     return `****-****-****-${card.slice(-4)}`;
   }
 }
+
+function mask(card) {
+  const seperator = card.includes(' ') ? ' ' : '-';
+  const chunks = card.split(seperator);
+
+  // Replace chunks with asterisks
+  const masked = chunks.map((chunk, index) => {
+    return index < 3 ? '****' : chunk;
+  });
+
+  return masked.join(seperator);
+}
