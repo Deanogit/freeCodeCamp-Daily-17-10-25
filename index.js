@@ -5,3 +5,13 @@
 // Replace all numbers, except the last four, with an asterisk (*).
 // Leave the remaining characters unchanged.
 // For example, given "4012-8888-8888-1881" return "****-****-****-1881".
+
+function mask(card) {
+  console.log(card.slice(-4));
+
+  if (card.includes(' ')) {
+    return `**** **** **** ${card.slice(-4)}`;
+  } else {
+    return `****-****-****-${card.slice(-4)}`;
+  }
+}
